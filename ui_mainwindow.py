@@ -65,13 +65,64 @@ class Ui_MainWindow(object):
         self.expandCollapseButton = QPushButton(self.centralwidget)
         self.expandCollapseButton.setObjectName(u"expandCollapseButton")
         self.expandCollapseButton.setGeometry(QRect(760, 160, 151, 32))
-        self.layoutWidget1 = QWidget(self.centralwidget)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(20, 30, 441, 77))
-        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget1)
+        self.browserWidget = QWidget(self.centralwidget)
+        self.browserWidget.setObjectName(u"browserWidget")
+        self.browserWidget.setGeometry(QRect(20, 160, 431, 501))
+        self.label_5 = QLabel(self.browserWidget)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(0, 0, 100, 22))
+        self.label_5.setFont(font1)
+        self.label_5.setAlignment(Qt.AlignCenter)
+        self.widget = QWidget(self.browserWidget)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(310, 0, 111, 32))
+        self.horizontalLayout_2 = QHBoxLayout(self.widget)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.backButton = QPushButton(self.widget)
+        self.backButton.setObjectName(u"backButton")
+
+        self.horizontalLayout_2.addWidget(self.backButton)
+
+        self.forwardButton = QPushButton(self.widget)
+        self.forwardButton.setObjectName(u"forwardButton")
+
+        self.horizontalLayout_2.addWidget(self.forwardButton)
+
+        self.systemTreeWidget = QTreeWidget(self.browserWidget)
+        __qtreewidgetitem1 = QTreeWidgetItem()
+        __qtreewidgetitem1.setText(0, u"Name");
+        self.systemTreeWidget.setHeaderItem(__qtreewidgetitem1)
+        self.systemTreeWidget.setObjectName(u"systemTreeWidget")
+        self.systemTreeWidget.setGeometry(QRect(0, 30, 421, 411))
+        self.systemTreeWidget.setFont(font)
+        self.widget1 = QWidget(self.browserWidget)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(0, 470, 431, 32))
+        self.horizontalLayout_3 = QHBoxLayout(self.widget1)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.selectAllButton = QPushButton(self.widget1)
+        self.selectAllButton.setObjectName(u"selectAllButton")
+
+        self.horizontalLayout_3.addWidget(self.selectAllButton)
+
+        self.deselectButton = QPushButton(self.widget1)
+        self.deselectButton.setObjectName(u"deselectButton")
+
+        self.horizontalLayout_3.addWidget(self.deselectButton)
+
+        self.multiCheckBox = QCheckBox(self.browserWidget)
+        self.multiCheckBox.setObjectName(u"multiCheckBox")
+        self.multiCheckBox.setGeometry(QRect(160, 440, 101, 31))
+        self.multiCheckBox.setLayoutDirection(Qt.LeftToRight)
+        self.widget2 = QWidget(self.centralwidget)
+        self.widget2.setObjectName(u"widget2")
+        self.widget2.setGeometry(QRect(20, 30, 441, 77))
+        self.verticalLayout_2 = QVBoxLayout(self.widget2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.layoutWidget1)
+        self.label = QLabel(self.widget2)
         self.label.setObjectName(u"label")
         font2 = QFont()
         font2.setPointSize(20)
@@ -81,7 +132,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.label)
 
-        self.label_2 = QLabel(self.layoutWidget1)
+        self.label_2 = QLabel(self.widget2)
         self.label_2.setObjectName(u"label_2")
         font3 = QFont()
         font3.setPointSize(16)
@@ -92,59 +143,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.label_2)
 
-        self.label_7 = QLabel(self.layoutWidget1)
+        self.label_7 = QLabel(self.widget2)
         self.label_7.setObjectName(u"label_7")
 
         self.verticalLayout_2.addWidget(self.label_7)
 
-        self.label_5 = QLabel(self.centralwidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(20, 160, 100, 22))
-        self.label_5.setFont(font1)
-        self.label_5.setAlignment(Qt.AlignCenter)
-        self.layoutWidget2 = QWidget(self.centralwidget)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(330, 160, 111, 32))
-        self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget2)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.backButton = QPushButton(self.layoutWidget2)
-        self.backButton.setObjectName(u"backButton")
-
-        self.horizontalLayout_2.addWidget(self.backButton)
-
-        self.forwardButton = QPushButton(self.layoutWidget2)
-        self.forwardButton.setObjectName(u"forwardButton")
-
-        self.horizontalLayout_2.addWidget(self.forwardButton)
-
-        self.multiCheckBox = QCheckBox(self.centralwidget)
-        self.multiCheckBox.setObjectName(u"multiCheckBox")
-        self.multiCheckBox.setGeometry(QRect(180, 590, 101, 31))
-        self.multiCheckBox.setLayoutDirection(Qt.LeftToRight)
-        self.layoutWidget3 = QWidget(self.centralwidget)
-        self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(10, 620, 431, 32))
-        self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget3)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.selectAllButton = QPushButton(self.layoutWidget3)
-        self.selectAllButton.setObjectName(u"selectAllButton")
-
-        self.horizontalLayout_3.addWidget(self.selectAllButton)
-
-        self.deselectButton = QPushButton(self.layoutWidget3)
-        self.deselectButton.setObjectName(u"deselectButton")
-
-        self.horizontalLayout_3.addWidget(self.deselectButton)
-
-        self.systemTreeWidget = QTreeWidget(self.centralwidget)
-        __qtreewidgetitem1 = QTreeWidgetItem()
-        __qtreewidgetitem1.setText(0, u"Name");
-        self.systemTreeWidget.setHeaderItem(__qtreewidgetitem1)
-        self.systemTreeWidget.setObjectName(u"systemTreeWidget")
-        self.systemTreeWidget.setGeometry(QRect(20, 190, 421, 401))
-        self.systemTreeWidget.setFont(font)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -167,17 +170,17 @@ class Ui_MainWindow(object):
         self.goButton.setText(QCoreApplication.translate("MainWindow", u"Go", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Selected / Expanded", None))
         self.expandCollapseButton.setText(QCoreApplication.translate("MainWindow", u"Expand Collapsed", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Ingenuity Programming Challenge", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sequence File Selector", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Monika Hedman - March 2020", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"File System", None))
         self.backButton.setText(QCoreApplication.translate("MainWindow", u"<", None))
         self.forwardButton.setText(QCoreApplication.translate("MainWindow", u">", None))
-        self.multiCheckBox.setText(QCoreApplication.translate("MainWindow", u"Multi-Select", None))
-        self.selectAllButton.setText(QCoreApplication.translate("MainWindow", u"Select All", None))
-        self.deselectButton.setText(QCoreApplication.translate("MainWindow", u"Deselect All", None))
         ___qtreewidgetitem1 = self.systemTreeWidget.headerItem()
         ___qtreewidgetitem1.setText(2, QCoreApplication.translate("MainWindow", u"Type", None));
         ___qtreewidgetitem1.setText(1, QCoreApplication.translate("MainWindow", u"Collapsed", None));
+        self.selectAllButton.setText(QCoreApplication.translate("MainWindow", u"Select All", None))
+        self.deselectButton.setText(QCoreApplication.translate("MainWindow", u"Deselect All", None))
+        self.multiCheckBox.setText(QCoreApplication.translate("MainWindow", u"Multi-Select", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Ingenuity Programming Challenge", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sequence File Selector", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Monika Hedman - March 2020", None))
     # retranslateUi
 
