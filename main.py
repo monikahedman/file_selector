@@ -28,10 +28,6 @@ class MainWindow(QMainWindow):
         # Sets up UI based on the auto-generated python file
         self.ui.setupUi(self)
 
-        # Sets up headers so size can be altered
-        self.selected_header = self.ui.selectedTreeWidget.header()
-        self.system_header = self.ui.systemTreeWidget.header()
-
         # Sets up all initial functionality for the program
         self.setup_functionality()
 
@@ -103,25 +99,6 @@ class MainWindow(QMainWindow):
         self.ui.multiCheckBox.setChecked(True)
         # Sets up connection between returnPressed and submitting the path change
         self.ui.pathLineEdit.returnPressed.connect(self.submit_path_change)
-        self.setup_selected_header()
-        self.setup_system_header()
-
-    def setup_selected_header(self):
-        """
-        This method alters the size of the columns in the right widget to fit the contents.
-        """
-        self.selected_header.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
-        self.selected_header.setStretchLastSection(False)
-        self.selected_header.setSectionResizeMode(5, QtWidgets.QHeaderView.Stretch)
-        self.selected_header.setMinimumSectionSize(230)
-
-    def setup_system_header(self):
-        """
-        This method alters the size of the columns in the left widget to fit the contents.
-        """
-        self.system_header.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
-        self.system_header.setStretchLastSection(False)
-        self.system_header.setSectionResizeMode(5, QtWidgets.QHeaderView.Stretch)
 
     def on_double_click(self):
         """
@@ -260,14 +237,13 @@ class MainWindow(QMainWindow):
         for i in range(0, len(collapsedFiles)):
             widget = QtWidgets.QTreeWidgetItem()
             widget.setText(0, collapsedFiles[i])
-            type =  "Folder" if self.fb.is_dir(collapsedFiles[i]) else "File"
+            type = "Folder" if self.fb.is_dir(collapsedFiles[i]) else "File"
             widget.setText(2, type)
             collapsed = "Yes" if collapsedTF[i] else "No"
             widget.setText(1, collapsed)
             widgets.append(widget)
         # Add all widgets to the tree
         self.ui.systemTreeWidget.addTopLevelItems(widgets)
-        self.setup_system_header()
 
     def populate_selected_tree(self):
         """
@@ -286,8 +262,6 @@ class MainWindow(QMainWindow):
         new_widgets.sort()
         # Add all widgets to the tree
         self.ui.selectedTreeWidget.addTopLevelItems(new_widgets)
-        # Changes size of header to fit the current contents
-        self.setup_selected_header()
 
 
 class MouseDetector(QtCore.QObject):
