@@ -157,6 +157,7 @@ class MainWindow(QMainWindow):
         if not self.ui.multiCheckBox.isChecked() or not self.widgets == new_widgets:
             equalize_lists(self.widgets, new_widgets)
             self.populate_selected_tree()
+            self.set_expansion()
 
     def connect_buttons(self):
         """
@@ -183,6 +184,17 @@ class MainWindow(QMainWindow):
         new = coll if should_expand else exp_coll
         self.ui.expandCollapseButton.setText(new)
 
+        # Handles what happens to the actual files
+        if should_expand:
+            self.expand_collapsed_items()
+        else:
+            self.collapse_items()
+
+    def set_expansion(self):
+        exp_coll = "Expand Collapsed"
+        coll = "Collapse Files"
+        cur = self.ui.expandCollapseButton.text()
+        should_expand = True if cur == coll else False
         # Handles what happens to the actual files
         if should_expand:
             self.expand_collapsed_items()

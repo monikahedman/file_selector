@@ -136,7 +136,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -192,7 +192,7 @@
       </property>
      </column>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -235,7 +235,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -255,7 +255,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Ingenuity Programming Challenge</string>
+        <string>Sequence File Selector</string>
        </property>
       </widget>
      </item>
@@ -270,7 +270,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Sequence File Selector</string>
+        <string>Pipeline TD Project</string>
        </property>
       </widget>
      </item>
